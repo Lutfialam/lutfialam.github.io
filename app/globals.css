@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: #ffffff;
+    --color-foreground: #171717;
+    --color-primary: #6366f1;
+    --color-primary-dark: #4f46e5;
+    --color-primary-light: #818cf8;
+    --color-dark-bg: #111827;
+    --color-dark-surface: #1f2937;
+    --color-dark-text: #e5e7eb;
+    --font-sans: var(--font-poppins), "Poppins", sans-serif;
+    --font-mono: var(--font-poppins), "Poppins", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --color-background: #111827;
+        --color-foreground: #e5e7eb;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background-color: #111827;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #6366f1;
+}
+
+/* Decorative rotated rectangle */
+.hero-rectangle {
+    position: absolute;
+    width: 1058.82px;
+    height: 748.12px;
+    left: 60%;
+    top: -13%;
+    background: linear-gradient(50.66deg, #6366f1 -0.36%, #4f46e5 63.07%);
+    border-radius: 80px;
+    transform: rotate(41.94deg);
+    z-index: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-rectangle {
+        width: 500px;
+        height: 400px;
+        left: 40%;
+        top: -5%;
+        border-radius: 50px;
+    }
 }
