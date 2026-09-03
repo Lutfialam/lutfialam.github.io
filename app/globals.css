@@ -64,11 +64,14 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Keep the decorative shape clear of the headline: smaller, pushed to
+       the top-right corner, and dimmed so text stays legible over it. */
     .hero-rectangle {
-        width: 500px;
-        height: 400px;
-        left: 40%;
-        top: -5%;
-        border-radius: 50px;
+        width: 340px;
+        height: 280px;
+        left: 70%;
+        top: -14%;
+        border-radius: 44px;
+        opacity: 0.45;
     }
 }
